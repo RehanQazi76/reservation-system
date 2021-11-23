@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EDIFY</title>
+    <link rel = "icon" href = 
+    https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqK2wzlgjd5_omPrgLWKaJJeZqFab85N5xbA&usqp=CAU
+        type = "image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/style-responsive.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/to-do.css">
+<link rel="stylesheet" href="style.css">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<div class="bg-gray-50">
+
+
+
+
+    <style>
+        .title {
+        
+        font-size: 120px;
+        color: rgb(61, 81, 140);
+        text-align: center;
+        min-height: 160px;
+        animation: glow 1s ease-in-out infinite alternate;
+        
+      }
+      
+      
+
+      
+      </style>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <body style="background-color:#D8EAFD"></body>
+      
+      <h1 class = "title"><b>EDIFY</b></h1>
+
+      <!--navbar style-->
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+    }
+    .wrapper{
+      background: rgb(61, 81, 140);
+      position: fixed;
+      width: 100%;
+    }
+    .wrapper nav{
+      position: relative;
+      display: flex;
+      max-width: calc(100% - 200px);
+      margin: 0 auto;
+      height: 70px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .content{
+      display: flex;
+      align-items: center;
+    }
+    nav .content .links{
+      margin-left: 80px;
+      display: flex;
+    }
+    .content .logo a{
+      color: #fff;
+      font-size: 35px;
+      font-weight: 600;
+    }
+    .contai .logo a{
+      color: #fff;
+      font-size: 26px;
+      font-weight: 600;
+
+    }
+    .content .links li{
+      list-style: none;
+      line-height: 70px;
+    }
+    .content .links li a,
+    .content .links li label{
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 9px 17px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .content .links li label{
+      display: none;
+    }
+    .content .links li a:hover,
+    .content .links li label:hover{
+      background: #323c4e;
+    }
+    .wrapper .search-icon,
+    .wrapper .menu-icon{
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      line-height: 70px;
+      width: 70px;
+      text-align: center;
+    }
+    .wrapper .menu-icon{
+      display: none;
+    }
+    .wrapper #show-search:checked ~ .search-icon i::before{
+      content: "\f00d";
+    }
+    .wrapper .search-box{
+      position: absolute;
+      height: 100%;
+      max-width: calc(100% - 50px);
+      width: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+    .wrapper #show-search:checked ~ .search-box{
+      opacity: 1;
+      pointer-events: auto;
+    }
+   
+    .wrapper input[type="checkbox"]{
+      display: none;
+    }
+    /* Dropdown Menu code start */
+    .content .links ul{
+      position: absolute;
+      background: #171c24;
+      top: 80px;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .content .links li:hover > ul{
+      top: 70px;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.3s ease;
+    }
+    .content .links ul li a{
+      display: block;
+      width: 100%;
+      line-height: 30px;
+      border-radius: 0px!important;
+    }
+    .content .links ul ul{
+      position: absolute;
+      top: 0;
+      right: calc(-100% + 8px);
+    }
+    .content .links ul li{
+      position: relative;
+    }
+    .content .links ul li:hover ul{
+      top: 0;
+    }
+    /* Responsive code start */
+    @media screen and (max-width: 1250px){
+      .wrapper nav{
+        max-width: 100%;
+        padding: 0 20px;
+      }
+      nav .content .links{
+        margin-left: 30px;
+      }
+      .content .links li a{
+        padding: 8px 13px;
+      }
+      .wrapper .search-box{
+        max-width: calc(100% - 100px);
+      }
+      .wrapper .search-box input{
+        padding: 0 100px 0 15px;
+      }
+    }
+    @media screen and (max-width: 900px){
+      .wrapper .menu-icon{
+        display: block;
+      }
+      .wrapper #show-menu:checked ~ .menu-icon i::before{
+        content: "\f00d";
+      }
+      nav .content .links{
+        display: block;
+        position: fixed;
+        background: #14181f;
+        height: 100%;
+        width: 100%;
+        top: 70px;
+        left: -100%;
+        margin-left: 0;
+        max-width: 350px;
+        overflow-y: auto;
+        padding-bottom: 100px;
+        transition: all 0.3s ease;
+      }
+      nav #show-menu:checked ~ .content .links{
+        left: 0%;
+      }
+      .content .links li{
+        margin: 15px 20px;
+      }
+      .content .links li a,
+      .content .links li label{
+        line-height: 40px;
+        font-size: 20px;
+        display: block;
+        padding: 8px 18px;
+        cursor: pointer;
+      }
+      .content .links li a.desktop-link{
+        display: none;
+      }
+      /* dropdown responsive code start */
+      .content .links ul,
+      .content .links ul ul{
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        max-height: 0px;
+        overflow: hidden;
+      }
+      .content .links #show-features:checked ~ ul,
+      .content .links #show-services:checked ~ ul,
+      .content .links #show-items:checked ~ ul{
+        max-height: 100vh;
+      }
+      .content .links ul li{
+        margin: 7px 20px;
+      }
+      .content .links ul li a{
+        font-size: 18px;
+        line-height: 30px;
+        border-radius: 5px!important;
+      }
+    }
+    @media screen and (max-width: 400px){
+      .wrapper nav{
+        padding: 0 10px;
+      }
+      .content .logo a{
+        font-size: 27px;
+      }
+      .wrapper .search-box{
+        max-width: calc(100% - 70px);
+      }
+      .wrapper .search-box .go-icon{
+        width: 30px;
+        right: 0;
+      }
+      .wrapper .search-box input{
+        padding-right: 30px;
+      }
+    }
+    
+    </style>
+    <!--navbar-->
+    <style>
+      .logo a:hover {background-color: rgb(14, 119, 93);}
+    </style>
+    <div class="wrapper">
+        <nav>
+          <input type="checkbox" id="show-search">
+          <input type="checkbox" id="show-menu">
+          <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+          <div class="content">
+          {%if request.user.is_authenticated%}
+          <div  class="logo"><a style="text-decoration: none;"class='button' href="{% url 'logout' %}">LOGOUT</a></div>
+          {% else %}
+          <a href="{% url 'login' %} ">login</a>
+          {% endif %}
+            <ul class="links">
+              <li><a href="#">MATHS</a></li>
+              <li><a href="#">BIOLOGY</a></li>
+              <li>
+                <a href="#" class="desktop-link">PHYSICS</a>
+                <input type="checkbox" id="show-features">
+                <label for="show-features">XX</label>
+                <ul>
+                  <li><a href="#">PART 1</a></li>
+                  <li><a href="#">PART 2</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="desktop-link">CHEM</a>
+                <input type="checkbox" id="show-services">
+                <label for="show-services">XX</label>
+                <ul>
+                  <li><a href="#">PART 1</a></li>
+                  <li><a href="#">PART 2</a></li>                 
+                </ul>
+              </li>
+              <li><a href="#">COMP-SCI</a></li>
+            </ul>
+          </div>
+          <style>
+            .contai a:hover {background-color: rgb(14, 119, 93);}
+          </style>
+          
+          {% csrf_token %}
+          
+          <div class="contai">
+           <div class="logo">
+            <a style="text-decoration: none;" class='button' href="{% url 'task-create' %} ">+ ADD TASK</a></div>
+          </div>
+          </form>
+        </nav>
+      </div>
+      
+    
+      <br>
+      <br>
+
+
+    <!--go back to course-->
+    
+   
+  
+
+<br>
+<br>
+<br>
+
+
+
+
+<style>
+  * {
+  box-sizing: border-box;
+}
+
+html.open, body.open {
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  padding: 0px;
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0px;
+  background-color: #D8EAFD;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  text-align: center;
+  margin: 20px 0 60px;
+}
+
+main {
+  background-color: #D8EAFD;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+}
+
+table {
+  display: block;
+}
+
+tr, td, tbody, tfoot {
+  display: block;
+}
+
+thead {
+  display: none;
+}
+
+tr {
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 10px 10px 0;
+  text-align: center;
+  background-color:#202932;
+}
+td:before {
+  content: attr(data-title);
+  color: #7a91aa;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  padding-right: 10px;
+  display: block;
+}
+
+table {
+  width: 60%;
+  margin-right: auto;
+  margin-left:auto ;
+}
+
+th {
+  text-align: left;
+  font-weight: 700;
+}
+
+thead th {
+  background-color: #202932;
+  color: #fff;
+  border: 1px solid #0b0f13;
+}
+
+tfoot th {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #b8c4d2;
+}
+
+.button {
+  line-height: 1;
+  display: inline-block;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 8px;
+  background-color: #4b908f;
+  
+}
+
+.select {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #28333f;
+}
+.select:before {
+  display: none;
+}
+
+.detail {
+  background-color: #BD2A4E;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+.detail.open {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.detail-container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 500px;
+}
+
+dl {
+  margin: 0;
+  padding: 0;
+}
+
+dt {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+dd {
+  margin: 0 0 40px 0;
+  font-size: 1.8rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ac2647;
+  box-shadow: 0 1px 0 #c52c51;
+}
+
+.close {
+  background: none;
+  padding: 18px;
+  color: #fff;
+  font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  line-height: 1;
+  font-size: 1.8rem;
+  position: fixed;
+  right: 40px;
+  top: 20px;
+  -moz-transition: border 0.3s linear;
+  -o-transition: border 0.3s linear;
+  -webkit-transition: border 0.3s linear;
+  transition: border 0.3s linear;
+}
+.close:hover, .close:focus {
+  background-color: #a82545;
+  border: 1px solid #a82545;
+}
+
+@media (min-width: 460px) {
+  td {
+    text-align: left;
+  }
+  td:before {
+    display: inline-block;
+    text-align: right;
+    width: 140px;
+  }
+
+  .select {
+    padding-left: 160px;
+  }
+}
+@media (min-width: 720px) {
+  table {
+    display: table;
+  }
+
+  tr {
+    display: table-row;
+  }
+
+  td, th {
+    display: table-cell;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tfoot {
+    display: table-footer-group;
+  }
+
+  td {
+    border: 8px solid #6795c7;
+  }
+  td:before {
+    display: none;
+  }
+
+  td, th {
+    padding: 10px;
+  }
+
+  
+
+  tfoot th {
+    display: table-cell;
+  }
+
+  .select {
+    padding: 10px;
+  }
+}
+
+</style>
+
+
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th style= "text-align: center;">
+         Subject
+        </th>
+        <th style= "text-align: center;">
+          Chapter Name
+        </th>
+        <th style= "text-align: center;">
+          Customize
+        </th>
+      </tr>
+    </thead>
+    {% csrf_token %}
+    <tbody>
+    {% for task in object_list%}
+      <tr>
+        <td data-title='Provider Name'style= "text-align: center;">
+          {{task.sub}}
+        </td>
+          <td data-title='E-mail'style= "text-align: center;">
+           {{task.chapter}}
+        </td>
+        <td class='select'style= "text-align: center;">
+          {% if not task.complete %}
+          <a style="text-decoration: none ;" onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'" class='button' href ="{% url 'task' task.id %}">
+            VIEW
+          </a>
+          {% endif %}
+          <a style="text-decoration: none;"onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'"class='button' href="{% url 'task-update' task.id %}">
+            UPDATE
+          </a>
+          {% if task.complete %}
+          <a style="text-decoration: none;"onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'"class='button' href="{% url 'task-delete' task.id  %}">
+            DELETE
+          </a>
+          {% endif %}
+        </td>
+      </tr>
+    {%empty%}
+    <h3>no items</h3>
+    {%endfor%}
+
+    </tbody>
+  </table>
+</main>
+<style>
+  .select a:hover {background-color: rgb(14, 119, 93);}
+</style>
+
+
+
+<br>
+
+<style>
+  .block{
+    background-color: #D8EAFD;
+  color: black;
+  }
+
+</style>
+<div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+  <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+    <span class="block"> hello {{request.user}}  Ready to Start Learning?</span>
+    <br>
+    <span class="block text-black-600">Kick-start your prep right away!!</span>
+  </h2>
+
+    <div class="ml-3 inline-flex rounded-md shadow">
+      <a href="/maths" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50" style= "display: block;">
+        PHYSICS
+      </a>
+      <a href="/chemistry" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+        CHEMISTRY
+      </a>
+
+            
+      <a href="/mathematics" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+        MATHEMATICS
+      </a>
+      
+
+    </div>
+  </div>
+</div>
+</div>
