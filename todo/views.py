@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView,FormView
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView 
-from .models import Task
+from .models import Task, Ticket
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from todo.forms import UserForm
@@ -35,21 +35,21 @@ class RegisterPage(FormView) :
         
         return super(RegisterPage,self).get( *args, **kwargs)
 class TaskList(LoginRequiredMixin,ListView):
-    model = Task
+    model = Ticket
     context_object_name = 'tasks'
     
     def get_queryset(self):
-        return Task.objects.filter(user=self.request.user)
+        return Ticket.objects.filter(user=self.request.user)
 
 
 
 
 class TaskDetail(LoginRequiredMixin,DetailView):
-    model= Task
+    model= Ticket
 
 class TaskCreate(LoginRequiredMixin,CreateView):
-    model=Task
-    fields=['sub','chapter','details','complete','date','month']   
+    model=Ticket
+    fields=['flight_no','seat_no','date','month','fromm','to'] 
     success_url=reverse_lazy("tasks")
 
     def form_valid(self, form):
@@ -57,12 +57,12 @@ class TaskCreate(LoginRequiredMixin,CreateView):
         return super(TaskCreate,self).form_valid(form) 
 
 class TaskUpdate(LoginRequiredMixin,UpdateView) :
-    model=Task
-    fields=['sub','chapter','details','complete','date_from']  
+    model=Ticket
+    fields=['flight_no','seat_no','date','month','fromm','to']  
     success_url=reverse_lazy("tasks")
 
 class DeleteView(LoginRequiredMixin,DeleteView) :
-    model=Task
+    model=Ticket
     fields='__all__'   
     success_url=reverse_lazy("tasks")            
 

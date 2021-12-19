@@ -18,6 +18,12 @@ class Name (models.Model):
 
 class Ticket(models.Model):
     user=models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+    date=models.ForeignKey(Date, on_delete=models.SET_NULL, null=True)
+    month=models.ForeignKey(Month, on_delete=models.SET_NULL, null=True)
+    flight_no =models.CharField(max_length=50)
+    seat_no =models.CharField(max_length=50)
+    fromm =models.CharField(max_length=50)
+    to =models.CharField( max_length=50)
 
 
 class Task (models.Model):
@@ -30,6 +36,8 @@ class Task (models.Model):
     created=models.DateTimeField(auto_now_add=True)
     date=models.ForeignKey(Date, on_delete=models.SET_NULL, null=True)
     month=models.ForeignKey(Month, on_delete=models.SET_NULL, null=True)
+    flight_no =models.CharField(max_length=50)
+    seat_no =models.CharField(max_length=50)
 
     class Meta:
         ordering=['complete']

@@ -1,0 +1,32 @@
+{% extends 'todo/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+  <h1>passenger details</h1>
+  <h2>Name</h2>
+  <h2>{{user.first_name}} {{user.last_name}}</h2>  
+  <h2>from:</h2>
+    <h2>{{ticket.fromm}}</h2>
+    <h2>To:</h2>
+    <h2>{{ticket.to}}</h2>
+    <h2>Date:</h2>
+    <h2>{{ticket.date}}</h2>
+    <h2>month :</h2>
+    <h2>{{ticket.month}}</h2>
+    <h2>Flight no :</h2>
+    <h2>{{ticket.flight_no}}</h2>
+    <h2> Seat no:</h2>
+    <h2>{{ticket.seat_no}}</h2>
+    
+    <a style="text-decoration: none;"onMouseOver="this.style.color='white'"onMouseOut="this.style.color='white'"class='button' href="{% url 'task-delete' ticket.id  %}">
+      CANCEL
+    </a>
+</div>
+
+
+{% endblock content %}   
